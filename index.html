@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jucelio Pereira – Estratégia, IA & Governança</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="One-page institucional de Jucelio Pereira – Consultor em Estratégia, IA & Governança, autor do método H.O.L.O.S. e CEO Quartzgroup Technologies."
+  />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card-bg: #ffffff;
+      --primary: #1f3c88;
+      --primary-soft: #e3e8fb;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --border: #d1d5db;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top left, #e5edff 0, #f9fafb 45%, #f3f4f6 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 16px auto;
+      padding: 0 12px 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 20px;
+      padding: 20px 20px 10px;
+      background: radial-gradient(circle at top left, #e0ebff 0, #ffffff 55%);
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+    }
+
+    .headline {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 4px;
+    }
+
+    .subheadline {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 6px 0 10px;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 60, 136, 0.25);
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .bio-intro {
+      font-size: 0.94rem;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .photo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+      background: #e5e7eb;
+    }
+
+    main {
+      padding: 6px 18px 20px;
+    }
+
+    section {
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.45);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.02rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    h3 {
+      font-size: 0.96rem;
+      margin: 10px 0 4px;
+      color: var(--text);
+    }
+
+    p {
+      margin: 3px 0 6px;
+      font-size: 0.93rem;
+    }
+
+    ul {
+      margin: 3px 0 6px 18px;
+      padding: 0;
+      font-size: 0.92rem;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 26px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta-box {
+      margin-top: 6px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(15, 118, 110, 0.04);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 0.93rem;
+      margin-top: 6px;
+    }
+
+    .contact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <header>
+        <div>
+          <h1 class="headline">Jucelio Pereira</h1>
+          <p class="subheadline">
+            Consultor em Estratégia, IA &amp; Governança · Autor do Método H.O.L.O.S. ·
+            CEO Quartzgroup Technologies · Brasil–EUA
+          </p>
+
+          <div class="tags">
+            <span class="tag">Estratégia &amp; Projetos</span>
+            <span class="tag">Governo &amp; Licitações</span>
+            <span class="tag">IA &amp; Tecnologia</span>
+            <span class="tag">Educação &amp; Liderança</span>
+          </div>
+
+          <p class="bio-intro">
+            Atuo orientando empresas, governos e ecossistemas de inovação a tomar decisões melhores em
+            ambientes de alta complexidade – conectando estratégia, inteligência artificial, governança
+            e território.
+          </p>
+        </div>
+
+        <div class="photo-wrapper">
+          <!-- Troque "foto-jucelio.jpg" pelo caminho real da sua foto -->
+          <img src="foto-jucelio.jpg" alt="Foto profissional de Jucelio Pereira"
+               class="photo" />
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <h2>Minha visão</h2>
+          <p>
+            O mundo deixou de ser linear. Organizações e cidades vivem em redes de interesses, dados,
+            tecnologias e pessoas. Sem uma visão sistêmica, decisões se fragmentam e projetos se perdem
+            no caminho.
+          </p>
+          <p>
+            Por isso, meu trabalho é organizar a complexidade para que líderes possam:
+          </p>
+          <ul>
+            <li>enxergar o todo com clareza;</li>
+            <li>assumir riscos com responsabilidade;</li>
+            <li>desenhar estratégias que façam sentido para pessoas, território e futuro.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Áreas em que atuo</h2>
+
+          <div class="grid-2">
+            <div>
+              <h3>1. Estratégia &amp; Projetos</h3>
+              <p>Desenho e revisão de estratégias organizacionais.</p>
+              <p>
+                Estruturação de projetos complexos (empresas, cidades, hubs, ecossistemas).
+              </p>
+              <p>
+                Governança, indicadores e tomada de decisão em ambiente incerto.
+              </p>
+            </div>
+
+            <div>
+              <h3>2. Governo &amp; Licitações</h3>
+              <p>Mais de 25 anos em licitações públicas e contratos com o governo.</p>
+              <p>
+                Apoio à estruturação de projetos, gestão de riscos e governança contratual.
+              </p>
+              <p>
+                Alinhamento entre interesse público, sustentabilidade econômica e segurança jurídica.
+              </p>
+            </div>
+
+            <div>
+              <h3>3. IA &amp; Tecnologia</h3>
+              <p>
+                Uso de IA aplicada para apoiar decisões, redesenhar processos e criar novos serviços.
+              </p>
+              <p>
+                Estratégia de dados, ética, compliance e governança em projetos de IA.
+              </p>
+              <p>
+                Conexão entre tecnologia, pessoas e território – IA a serviço da vida, não o contrário.
+              </p>
+            </div>
+
+            <div>
+              <h3>4. Educação, Cursos &amp; Formação de Líderes</h3>
+              <p>
+                Programas de formação baseados em H.O.L.O.S. para gestores públicos e privados.
+              </p>
+              <p>
+                Cursos e jornadas sobre estratégia, IA, governança e desenvolvimento de ecossistemas.
+              </p>
+              <p>
+                Palestras, workshops e advisory para conselhos, C-level e equipes técnicas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Método H.O.L.O.S.</h2>
+          <p>
+            Sou autor do método H.O.L.O.S., uma arquitetura de pensamento criada para:
+          </p>
+          <ul>
+            <li>mapear sistemas complexos (organizações, cidades, cadeias produtivas);</li>
+            <li>conectar decisões de curto, médio e longo prazo;</li>
+            <li>
+              integrar governança, tecnologia, pessoas e território em um mesmo mapa.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Diferenciais de minha atuação</h2>
+          <ul>
+            <li>
+              <strong>Visão integrada:</strong> concilio Estratégia, Direito, IA, Governança Pública e Educação.
+            </li>
+            <li>
+              <strong>Experiência em governo:</strong> décadas em licitações e contratos, com conhecimento aprofundado do Estado.
+            </li>
+            <li>
+              <strong>Ecossistema Quartzgroup:</strong> atuação conectada com empresas e projetos em tecnologia, educação, IA, inovação e território.
+            </li>
+            <li>
+              <strong>Método próprio:</strong> H.O.L.O.S. como base conceitual e prática para organizar decisões.
+            </li>
+            <li>
+              <strong>Atuação Brasil–EUA:</strong> olhar internacional sem perder o vínculo com o território e o contexto brasileiro.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Como posso apoiar você ou sua instituição</h2>
+          <ul>
+            <li>Projetos de consultoria estratégica</li>
+            <li>Advisory contínuo para liderança (C-level, gestores públicos, diretores)</li>
+            <li>Desenho e acompanhamento de projetos de IA e transformação digital</li>
+            <li>Estruturação e gestão de projetos com governo e licitações públicas</li>
+            <li>Cursos, palestras e programas de formação customizados</li>
+          </ul>
+
+          <div class="cta-box">
+            Se você está lidando com decisões difíceis em um ambiente complexo – seja em uma empresa,
+            órgão público, cidade ou instituição de ensino – proponho uma reunião para um diagnóstico
+            inicial. Decisões estratégicas precisam considerar não apenas resultados imediatos, mas também
+            seus efeitos sobre pessoas, instituições e futuros possíveis.
+          </div>
+        </section>
+
+        <section>
+          <h2>Contato</h2>
+          <div class="contact">
+            <span>
+              <span class="contact-label">Instagram</span>
+              <a href="https://www.instagram.com/jucelio.consultor" target="_blank" rel="noopener noreferrer">
+                @jucelio.consultor
+              </a>
+            </span>
+            <span>
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">
+                Jucelio Pereira da Silva
+              </a>
+            </span>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
